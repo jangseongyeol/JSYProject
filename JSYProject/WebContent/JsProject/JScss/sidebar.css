@@ -1,0 +1,199 @@
+@CHARSET "UTF-8";
+#mainsidenav {position: fixed; width: 450px; top: 0px; text-align: center;
+float: right; right: 0; height: 100%; border-radius: 15px; transition: all 1s;
+}
+.sidemainmenu {display: block; width: 51px; height:415px; border: 1px solid silver;
+position: absolute; margin-top: 280px; border-right: 0px; border-bottom: 0px;
+float: right; right: 287px;}
+.sidemainmenu div {display: block; width: 51px; height: 51px; border-bottom: 1px solid silver;
+position:relative; cursor: pointer;
+}
+.mainsidediv.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+
+.newoption1.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+.newoption2.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+.newoption3.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+.newoption4.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+.newoption5.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+
+.newoption6.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+
+.sidemenuname.collapsed {
+    transform:translate(287px,0);
+　-webkit-transform:translate(287px,0);
+　-moz-transform:translate(287px,0);
+　-ms-transform:translate(287px,0);
+　-o-transform:translate(287px,0);
+    position: fixed;
+}
+
+.subsidediv {width: 285px; top: 0px; text-align: center;
+border: 1px solid silver; float: right; right: 0; height:100%; border-radius: 15px; 
+display: block;  
+}
+.subsidediv2 {text-align: left; padding-top: 35px; padding-left: 20px;}
+.home_button {width: 40px; border: 0px; height: 32px; cursor:pointer;
+border-radius: 10px; background-color: silver; color: white;}
+#home_search {width: 180px; height: 30px; margin-right: 10px; 
+border-radius: 10px; border: 1px solid silver; background-color: silver; color: white;}
+.side_p {font-family: "cooper black"; padding: 10px; border-bottom: 1px silver dotted; }
+.side_img {border: 1px silver solid; margin: auto; width: 199px; height: 45px;}
+.side_ment {font-family: "cooper black"; padding-bottom: 10px;}
+.side_ment1 {font-family: "cooper black"; font-size: 30px;}
+a:link {text-decoration: none;}
+a {color: black;}
+.sidemenuname {height: 1000px; position: fixed; width: 110px; margin-top: 291px;
+ float: left;  visibility: hidden; z-index: 8; margin-right: 300px;  right: 40px; transition: all 1s;
+}
+.sidemenuname div {width: 105px; height: 29px; text-align: center; background-color: black;
+border-radius: 10px; font-weight: bold; font-size: 14px; color: white;  position: relative; 
+padding-top: 11px; margin-top: 12px;}
+#sidemenuname1 {margin-top: 8px; }
+
+
+#newoption1 {margin-top: 200px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; text-align: center; border: 1px solid silver;
+ transition: all 1s; padding: 0px 10px;}
+#newoption2 {margin-top: 250px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; border: 1px solid silver; 
+ transition: all 1s; padding: 0px 10px;}
+#newoption3 {margin-top: 300px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; border: 1px solid silver; 
+ transition: all 1s;}
+#newoption4 {margin-top: 350px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; border: 1px solid silver; 
+ transition: all 1s;}
+#newoption5 {margin-top: 400px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; border: 1px solid silver; 
+ transition: all 1s;}
+#newoption6 {margin-top: 450px; background-color: white; display: none; position: fixed;
+ right: 338px; width: 460px; height: 425px; z-index: 5; border: 1px solid silver; 
+ transition: all 1s;}
+ 
+.newop1 {margin: auto; border-collapse: collapse;}
+.newop1 td {border-bottom: 1px solid #ddd;}
+.newop1 .td1 {text-align: left; height: 48px; width: 120px;  }
+.newop1 .td2 {text-align: left; }
+.newop1 .tdselect {width: 315px; height: 30px;}
+.newop1 .tdselect1 {width: 160px; height: 30px;}
+.newop1 .tdtext {width: 150px; height: 30px;}
+.newop1 .tdtext1 {width: 315px; height: 30px;}
+.newop1 input[type=button] {margin: 0 2px; height: 30px; background-color: white;
+border: 1px solid #ddd; padding: 0px 2px; color: gray;}
+.newop1 input[type=button]:hover {background-color: black; cursor: pointer;}
+.newoption1 button {width: 100px; height: 50px; margin-top: 5px; background-color: #333; color: white;
+border-radius: 10px; border: 0; outline: 0;}
+.newoption1 button:hover {background-color: silver; border-radius: 10px;}
+
+.button {cursor: pointer;}
+.newoption1 .newoption2 hr {color: silver;}
+#home_span1{ text-align: left; width: 100px; margin-right: 380px; font-size: 18px; }
+#home_span1_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+#home_span2 {text-align: left; width: 100px; margin-right: 290px; font-size: 18px;}
+#home_span2_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+
+#newoption2_div1_1 {width: 458px; height: 270px; display: inline-block;}
+#newoption2_div1_1_login {width: 450px; height: 240px; font-family: "cooper black"; margin-top: 10px;}
+.newoption2_div1_1_text1 {width: 380px; height: 40px; border-radius: 10px; margin-left: 38px; margin-top: 20px;}
+#newoption2_div1_1 p {display:inline-block; font-size: 12px;}
+#newoption2_div1_1_a {
+        position: relative;
+      }
+#newoption2_div1_1_buttonlogin {width: 380px; height: 40px; border-radius: 10px; margin-left: 38px; background-color: #333;
+color: white; margin-top: 5px; border: 0; outline: 0;}
+.newoption2_div1_1_buttonserch1 {margin-left: 39px; width: 123px; margin-top: 10px; background-color: white; height: 30px;
+border-radius: 7px; outline: 0; }
+.newoption2_div1_1_buttonserch2 {width: 123px; height: 30px; border-radius: 7px; background-color: white; outline: 0;}
+#naverlogin2 {width: 50px; height: 50px; cursor: pointer; margin-left: 40px; margin-top: 10px;
+background-image: url("../sidebarimage/naver_icon.png");}
+#googlelogin2 {width: 50px; height: 50px; cursor: pointer;
+background-image: url("../sidebarimage/google_icon.png");}
+#facebooklogin2 {width: 50px; height: 50px; cursor: pointer;
+background-image: url("../sidebarimage/facebook_icon.png");}
+#kakaologin2 {width: 50px; height: 50px; cursor: pointer;
+background-image: url("../sidebarimage/kakaotalk_icon.png");}
+#check_id {width: 100px; height: 50px; float: right; margin-top: 10px; margin-right: 19px;}
+
+
+#newoption2_div1_2 {width: 458px; height: 270px; display: none;}
+#newoption2_div1_2_login {width: 450px; height: 240px;  font-family: "cooper black"; margin-top: 20px;}
+#newoption2_div1_2_login_buttonlogin {width: 380px; height: 60px; border-radius: 10px; margin-left: 38px; background-color: #333;
+color: white; margin-top: 20px; border: 0; outline: 0;}
+#newoption2_div1_2_login p {width: 380px; margin-left: 38px; margin-top: 20px;}
+
+#newoption2_div1 {width: 190px; height: 30px; text-align: center; margin-top: 20px; border-bottom: 3px solid ; font-size: 18px;
+cursor: pointer; margin-left: 46px; font-weight: bold; }
+#newoption2_div2 {width: 190px; height: 30px; text-align: center; margin-top: 20px; border-bottom: 1px solid ; font-size: 18px;
+cursor: pointer; font-weight: bold;}
+#home_span3 {text-align: left; width: 100px; margin-right: 330px; font-size: 18px; margin-left: 10px;}
+#home_span3_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+
+#home_span4 {text-align: left; width: 100px; margin-right: 330px; font-size: 18px; margin-left: 10px;}
+#home_span4_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+#home_span5 {text-align: left; width: 100px; margin-right: 350px; font-size: 18px; margin-left: 10px;}
+#home_span5_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+#home_span6 {text-align: left; width: 100px; margin-right: 310px; font-size: 18px; margin-left: 10px;}
+#home_span6_1{font-size: 40px; width: 100px; height: 40px; cursor: pointer; z-index: 8; }
+#newoption3_div {width: 440px; height: 265px; margin: 10px 10px; border-bottom: 1px solid #ddd; 
+background-image: url("../sidebarimage/newop3.jpg");}
+#newoption4_div {width: 440px; height: 265px; margin: 10px 10px; border-bottom: 1px solid #ddd; 
+background-image: url("../sidebarimage/newop4.jpg");}
+#newoption5_div1_1 {width: 440px; height: 215px; margin: 10px 10px; border-bottom: 1px solid #ddd; display: inline-block; }
+#newoption5_div1_2{width: 440px; height: 215px; margin: 10px 10px; border-bottom: 1px solid #ddd; display: none; }
+#newoption5_div1 {width: 190px; height: 30px; text-align: center; margin-top: 20px; border-bottom: 3px solid ; font-size: 18px;
+cursor: pointer; margin-left: 46px; font-weight: bold; }
+#newoption5_div2 {width: 190px; height: 30px; text-align: center; margin-top: 20px; border-bottom: 1px solid ; font-size: 18px;
+cursor: pointer; font-weight: bold;}
+#newoption6_div {width: 440px; height: 265px; margin: 10px 10px; border-bottom: 1px solid #ddd; }
+.newoption_button {width: 190px; height: 50px; background-color: #333; color: white;
+border-radius: 10px; border: 0; outline: 0; margin-left: 135px; margin-top: 0px;}
+.newoption_button:hover {background-color: silver; border-radius: 10px;}

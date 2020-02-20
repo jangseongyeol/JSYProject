@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+#board_div {width: 1512px; height: auto; margin-top: 50px; border-bottom:1px solid silver;}
+#board_div .maindiv {width: 100%; height: 1000px; position: relative;}
+#board_div .subdiv {width: 21.5%; height: 400px; text-align: center; margin: 2% 1%; 
+ float: left; }
+#board_div .img {width: 100%; height: 300px;}
+#board_div .num {text-align: center; font-weight: bold; font-family: cooper black}
+#board_div #div1 {margin-bottom: 40px;}
+
+#board_div_header {width: 1500px; height: 200px; background-color: #dab3ff;
+text-align: center; margin-top: 80px; border-radius: 30px;}
+#board_div p {border-bottom: 2px solid white; font-size: 100px; color: white;
+ width: 800px; margin-left: 350px; font-weight: bold;}
+#board_div h4 {color: white;}
+#board_div #maintable {width: 1500px; height: 1000px; }
+#board_div #div1 select {width: 200px; height: 40px;} 
+#board_div #div2 select {width: 130px; height: 30px;}
+#board_div .toprow {font-size: 23px; background-color: #b3d9ff; color: white; height: 70px;}
+#board_div .th1 {width: 150px; }
+#board_div .th2 {width: 730px;}
+#board_div .td1 {width: 150px; }
+#board_div .td2 {width: 730px;}
+#board_div button {
+	float: right;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	color: white;
+	font-weight: 3px;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+#board_div .subtable {text-align: center; width: 400px; 
+ height: 50px; font-size: 23px; border: solid white; margin-left: 550px;
+ border-radius: 20px;}
+#board_div .subtd {border-right: 2px solid white;}
+#board_div .subtd a {color: white;}
+#lastinput {width: 150px; height: 30px; border-radius: 15px; margin-left: 60px; margin-right: 20px;}

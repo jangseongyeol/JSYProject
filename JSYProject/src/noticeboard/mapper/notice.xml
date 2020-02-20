@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+   <select id="noticeCount" resultType="int">
+     select count(*) from noticeboard
+   </select>
+  
+  <select id="noticeList" resultType="noticeboard.dto.NoticeBoardDTO">
+       select * from(
+         select A.*, rownum as rn
+         from (
+           select num,managerid,subject,reg_date,readcount
+           ,re_level,(select count(*) from noticeboard_comment
+           where board_num=num) comment_count from noticeboard
+           order by ref desc, re_step
+         ) A   
+       )
+       where rn between #{start} and #{end} 
+  </select>
+  
+  <insert id="noticeInsert">
+    insert into noticeboard
+    (num,managerid,subject,passwd,ref,re_step,re_level,contents)
+    values
+( (select nvl(max(num)+1,1) from noticeboard)
+ ,#{managerid},#{subject},#{passwd}
+ ,(select nvl(max(num)+1,1) from noticeboard)
+ ,1,0,#{contents})
+  </insert>
+  
+  <update id="noticePlusReadCount">
+   update noticeboard set readcount=readcount+1 where num=#{num}
+  </update>
+  
+  
+  <select id="noticeViewReplace" resultType="noticeboard.dto.NoticeBoardDTO">
+    select * from noticeboard
+    where num=#{num}
+  </select>
+
+  <select id="noticeCommentList" resultType="noticeboard.dto.NoticeBoardCommentDTO">
+     select * from noticeboard_comment
+     where board_num=#{num}
+  </select>
+  
+  <insert id="noticeCommentAdd">
+    insert into noticeboard_comment
+    (comment_num,board_num,managerid,contents) values
+    ((select nvl(max(comment_num)+1,1) from noticeboard_comment)
+     , #{board_num}, #{managerid}, #{contents})
+  </insert>
+  
+  <delete id="noticeDelete">
+    delete from noticeboard
+    where num=#{num}
+  </delete>
+  
+  <update id="noticeUpdate">
+     update noticeboard
+     set managerid=#{managerid}, subject=#{subject}
+     , contents=#{contents}, passwd=#{passwd}
+     where num=#{num}
+  </update>
+  
+  <select id="noticePasswdCheck" resultType="String">
+    select passwd from noticeboard
+    where num=#{num} and passwd=#{passwd}
+  </select>
+  
+  
+</mapper>

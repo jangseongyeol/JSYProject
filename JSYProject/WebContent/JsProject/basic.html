@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/slide.css" />
+<style type="text/css">
+*{margin: 0px; padding: 0px;}
+body{ width: 1500px; height: 3950px;}
+#basic_maindiv {margin-top: 100px; display: inline-block; position: relative; }
+#basic_main{width: 600px; height: 426px;}
+#basic_main1 {width: 440px; height: 426px;}
+#basic_main2{width: 440px; height: 426px;}
+#basic_main3{width: 600px; height: 426px;}
+#basic_subimgdiv {display: inline-block; width: 880px; height: 426px; }
+.basic_imgdiv {display: inline-block;}
+.basic_maindiv {width: 1500px; height: 500px; position: relative; }
+.basic_subdiv {width: 270px; height: 400px; text-align: left; margin: 2% 1%;
+ float: left; }
+.basic_img {width: 270px; height: 300px;}
+.basic_basic_num {text-align: center; font-weight: bold; font-family: cooper black}
+span.basic_modelname {font-weight: bold;}
+span.basic_price {font-family: cooper black; }
+#basic_div2 {width: 1000px; height: auto; margin: auto; }
+.basic_subtable {text-align: center; margin: auto; padding-top: 70px;}
+.basic_subtable td {border: 1px solid silver; width: 40px; height: 40px; margin: 0px -2px; font-weight: bold;}
+a:link {text-decoration: none;}
+a {color: black;}
+hr {margin: 10px 0px;}
+h2{margin: 30px 0px;}
+</style>
+</head>
+<body>
+<div id="basic_maindiv">
+<div class="basic_imgdiv">
+<img alt="기본이미지" src="../JsProject/BasicImage/main.gif" id="basic_main">
+</div>
+<div class="basic_imgdiv">
+<img alt="기본이미지" src="../JsProject/BasicImage/basicmain1.jpg" id="basic_main1">
+</div>
+<div class="basic_imgdiv">
+<img alt="기본이미지" src="../JsProject/BasicImage/basicmain2.jpg" id="basic_main2">
+</div>
+<div id="basic_slide">
+  <input type="radio" name="pos" id="basic_pos1" checked>
+  <input type="radio" name="pos" id="basic_pos2">
+  <input type="radio" name="pos" id="basic_pos3">
+  <input type="radio" name="pos" id="basic_pos4">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <p class="pos">
+    <label for="basic_pos1"></label>
+    <label for="basic_pos2"></label>
+    <label for="basic_pos3"></label>
+    <label for="basic_pos4"></label>
+  </p>
+</div>
+<div class="basic_imgdiv">
+<img alt="기본이미지" src="../JsProject/BasicImage/basicmain3.jpg" id="basic_main2">
+</div>
+</div>
+
+<h2>BEST ACC</h2>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.1</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc.jpg"></a>
+<br>
+<p class="basic_modelname">골덴토끼슈트</p>
+<hr>
+<p class="basic_price">35,200원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_basic_num">Best.2</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc1.jpg"></a>
+<br>
+<p class="basic_modelname">곰돌이요정모자</p>
+<hr>
+<p class="basic_price">8,400원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.3</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc2.jpg"></a>
+<br>
+<p class="basic_modelname">P칼라요정모자</p>
+<hr>
+<p class="basic_price">6,800원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.4</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc3.jpg"></a>
+<br>
+<p class="basic_modelname">신생아양말3종세트</p>
+<hr>
+<p class="basic_price">9,600원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.5</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc4.jpg"></a>
+<br>
+<p class="basic_modelname">P칼라꼭지모자</p>
+<hr>
+<p class="basic_price">6,800원</p>
+</div>
+</div>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.6</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc5.jpg"></a>
+<br>
+<p class="basic_modelname">B후리스곰똑딱이모자</p>
+<hr>
+<p class="basic_price">12,800원</p>
+</div>
+<div class="basic_subdiv">
+<p class="basic_num">Best.7</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc6.jpg"></a>
+<br>
+<p class="basic_modelname">비숑부츠</p>
+<hr>
+<p class="basic_price">35,200원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.8</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc7.jpg"></a>
+<br>
+<p class="basic_modelname">사슴수면양말세트</p>
+<hr>
+<p class="basic_price">12,000원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.9</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc8.jpg"></a>
+<br>
+<p class="basic_modelname">R산타원피스(모자포함)</p>
+<hr>
+<p class="basic_price">35,200원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.10</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestAcc/bestacc9.jpg"></a>
+<br>
+<p class="basic_modelname">G크리스마스수면양말</p>
+<hr>
+<p class="basic_price">12,800원</p>
+</div>
+</div>
+
+<h2>BEST BABY</h2>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.1</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby.jpg"></a>
+<br>
+<p class="basic_modelname">D크림가디건</p>
+<hr>
+<p class="basic_price">51,200원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.2</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby1.jpg"></a>
+<br>
+<p class="basic_modelname">D울꽈배기가디건</p>
+<hr>
+<p class="basic_price">54,400원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.3</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby2.jpg"></a>
+<br>
+<p class="basic_modelname">오뜨베베수면조끼</p>
+<hr>
+<p class="basic_price">14,400원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.4</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby3.jpg"></a>
+<br>
+<p class="basic_modelname">뽀글이조끼</p>
+<hr>
+<p class="basic_price">20,800원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.5</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby4.jpg"></a>
+<br>
+<p class="basic_modelname">KC무스탕점퍼</p>
+<hr>
+<p class="basic_price">46,400원</p>
+</div>
+</div>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.6</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby5.jpg"></a>
+<br>
+<p class="basic_modelname">KC덤블점퍼</p>
+<hr>
+<p class="basic_price">35,900원</p>
+</div>
+<div class="basic_subdiv">
+<p class="basic_num">Best.7</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby6.jpg"></a>
+<br>
+<p class="basic_modelname">KC꽃점퍼</p>
+<hr>
+<p class="basic_price">48,000원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.8</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby7.jpg"></a>
+<br>
+<p class="basic_modelname">D눈송이니트</p>
+<hr>
+<p class="basic_price">30,600원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.9</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby8.jpg"></a>
+<br>
+<p class="basic_modelname">미니단니트티</p>
+<hr>
+<p class="basic_price">14,800원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.10</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestBaby/bestbaby9.jpg"></a>
+<br>
+<p class="basic_modelname">자스민원피스</p>
+<hr>
+<p class="basic_price">22,400원</p>
+</div>
+</div>
+
+<h2>BEST JUNIOR</h2>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.1</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior.jpg"></a>
+<br>
+<p class="basic_modelname">G시카고상하세트(패밀리룩)</p>
+<hr>
+<p class="basic_price">23,800원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.2</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior1.jpg"></a>
+<br>
+<p class="basic_modelname">G바스켓상하세트(패밀리룩)</p>
+<hr>
+<p class="basic_price">30,600원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.3</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior2.jpg"></a>
+<br>
+<p class="basic_modelname">G엔상하복세트(패밀리룩)</p>
+<hr>
+<p class="basic_price">25,500원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.4</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior3.jpg"></a>
+<br>
+<p class="basic_modelname">G엘상하복세트(패밀리룩)</p>
+<hr>
+<p class="basic_price">25,500원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.5</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior4.jpg"></a>
+<br>
+<p class="basic_modelname">G가을상하복세트</p>
+<hr>
+<p class="basic_price">25,500원</p>
+</div>
+</div>
+<div class="basic_maindiv">
+<div class="basic_subdiv">
+<p class="basic_num">Best.6</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior5.jpg"></a>
+<br>
+<p class="basic_modelname">G아동맨투맨티셔츠(패밀리룩)</p>
+<hr>
+<p class="basic_price">5,900원</p>
+</div>
+<div class="basic_subdiv">
+<p class="basic_num">Best.7</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior6.jpg"></a>
+<br>
+<p class="basic_modelname">후리스후드집업</p>
+<hr>
+<p class="basic_price">20,800원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.8</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior7.jpg"></a>
+<br>
+<p class="basic_modelname">D헤링본코트</p>
+<hr>
+<p class="basic_price">61,200원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.9</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior8.jpg"></a>
+<br>
+<p class="basic_modelname">샌디양털점퍼</p>
+<hr>
+<p class="basic_price">46,400원</p>
+</div>
+
+<div class="basic_subdiv">
+<p class="basic_num">Best.10</p>
+<hr>
+<a href="#"><img class="basic_img" alt="제품1" src="../ModelImage/BestJunior/bestjunior9.jpg"></a>
+<br>
+<p class="basic_modelname">양털집업점퍼</p>
+<hr>
+<p class="basic_price">46,400원</p>
+</div>
+</div>
+</body>
+</html>

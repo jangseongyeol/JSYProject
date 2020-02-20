@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="store">
+   <insert id="insertManager">
+      insert into storemanager 
+   (managernum, managerid, passwd, managername, 
+   manageremail, phone, birthday, postcode, address, address2)
+   values ((select nvl(max(managernum)+1,1) from storemanager),
+    #{managerid}, #{passwd}, #{managername}, 
+    #{manageremail}, #{phone}, #{birthday}, #{postcode}, #{address}, #{address2}) 
+  </insert>
+  <select id="passwdManagerCheck" resultType="storemanager.dto.StoreManagerDTO">
+    select * from storemanager where managerid=#{managerid}
+  </select>
+  
+  <select id="storeManagerDetail" resultType="storemanager.dto.StoreManagerDTO">
+    select * from storemanager where managerid=#{managerid}
+  </select>
+</mapper>

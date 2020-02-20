@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>POPUP BOOKMARKED</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(function() {
+	  var strWidth;
+	  var strHeight;
+	  //innerWidth / innerHeight / outerWidth / outerHeight 지원 브라우저 
+	  if ( window.innerWidth && window.innerHeight && window.outerWidth && window.outerHeight ) {
+
+	    strWidth = $('#container').outerWidth() + (window.outerWidth - window.innerWidth);
+	    strHeight = $('#container').outerHeight() + (window.outerHeight - window.innerHeight);
+	  }
+
+	  else {
+	    var strDocumentWidth = $(document).outerWidth();
+	    var strDocumentHeight = $(document).outerHeight();
+
+	    window.resizeTo ( strDocumentWidth, strDocumentHeight );
+
+	    var strMenuWidth = strDocumentWidth - $(window).width();
+	    var strMenuHeight = strDocumentHeight - $(window).height();
+
+	    strWidth = $('#container').outerWidth() + strMenuWidth;
+	    strHeight = $('#container').outerHeight() + strMenuHeight;
+
+	  }
+	  //resize 
+	  window.resizeTo(strWidth+3, strHeight+3);
+	}); 
+
+</script>
+<style type="text/css">
+*{margin: 0px; padding: 0px;}
+body {width: 350px; height: 350px; }
+#container {width: 350px; height: 350px;}
+.header {width: 350px; height: 55px; background-color: #333; color: white;}
+.header h1 {margin-left: 10px; font-size: 30px; padding-top: 5px;}
+.content {width: 350px; height: 295px; background-image: url("../JsProject/popup_image/popup_image1.jpg");
+background-repeat: no-repeat;}
+.info {width: 350px; height: 225px; text-align: center; }
+.btnArea {widows: 300px; height: 70px; border-top: 2px solid #333;}
+.btnArea button {width: 100px; height: 30px; border: 1px solid; background-color: #333; color: white;
+text-align: center; border-radius: 8px;}
+.btna1 { margin-left: 70px; margin-top: 20px; }
+</style>
+
+</head>
+<body>
+
+<div id="container">
+<div class="header">
+        <h1>STORE</h1>
+    </div>
+<div class="content">
+        <p class="info">
+        <br><br><br><br><br><br><br><br>
+          즐겨찾기시 다양한 혜택을 받으실 수 있습니다.<br/><strong>즐겨찾기</strong>에 추가하시겠습니까?
+        </p>
+        <div class="btnArea">
+           <button id="buttonok" onclick="" class="btna1">확인</button> 
+            <button id="buttoncancel" onclick="window.close()" class="btna2">취소</button> 
+        </div>
+    </div>
+</div>
+</body>
+</html>

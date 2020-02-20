@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ACC MUFFLER</title>
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/divcss.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="../JsProject/Jsjs/clickaction2.js"></script>
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/basic.css" />
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/slide.css" />
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/sidebar.css" /> 
+<link rel="stylesheet" type="text/css" href="../JsProject/JScss/home.css" />
+</head>
+<body>
+<aside>
+<div class="home_logindiv">
+<div class="home_loginsubdiv1">
+<a href="HomeLogin.html" class="home_login_a">로그인</a>
+ <a class="home_login_a"
+  href="MemberAgree.html">회원가입</a>
+ <a class="home_login_a" href="Search.html">아이디/비밀번호찾기</a>
+</div>
+</div>
+</aside>
+
+	<div class="newoption1" id="newoption1">
+	<span id="home_span1">검색</span>
+	<span id="home_span1_1" onclick="hide('newoption1')">&times;</span><hr>
+	<table class="newop1" > 
+	  <tr>
+	    <td class="td1">> 상품분류</td>
+	    <td class="td2">
+	    <select class="tdselect">
+	      <option>상품분류선택</option>
+	    </select>
+	    </td>
+	  </tr>
+	   <tr>
+	    <td class="td1">> 검색조건</td>
+	    <td class="td2">
+	    <select class="tdselect1">
+	      <option>검색조건</option>
+	    </select>
+	    <input type="text" name="" class="tdtext">
+	    </td>
+	  </tr>
+	   <tr>
+	    <td class="td1">> 제외검색어</td>
+	    <td class="td2"> 
+	    <input type="text" name="" class="tdtext1">
+	    </td>
+	  </tr>
+	   <tr>
+	    <td class="td1">> 인기검색어</td>
+	    <td class="td2">
+	    <input type="button" value="예쁜아기옷">
+	    <input type="button" value="신생아바디슈트">
+	    <input type="button" value="우주복">
+	    <input type="button" value="아기외출복">
+	    </td>
+	  </tr>
+	   <tr>
+	    <td class="td1">> 판매가격대</td>
+	    <td class="td2">
+	     <input type="text" name="" class="tdtext">~<input type="text" name="" class="tdtext">
+	    </td>
+	  </tr>
+	   <tr>
+	    <td class="td1">> 검색정렬기준</td>
+	    <td class="td2">
+	     <select class="tdselect">
+	      <option>기준선택</option>
+	    </select>
+	    </td>
+	  </tr>
+	</table>
+	<button>검색하기</button>
+	</div>
+	<div class="newoption2" id="newoption2">
+		<span id="home_span2">주문＊배송조회</span>
+	<span id="home_span2_1" onclick="hide('newoption2')">&times;</span><hr>
+	  <div id="newoption2_div1" onclick="showlogin()">회원로그인</div>
+	  <div id="newoption2_div2" onclick="showorder()">비회원 주문조회</div>
+	  <div id="newoption2_div1_1" ><div id="newoption2_div1_1_login">
+  <input class="newoption2_div1_1_text1" type="text" placeholder="ID" name=""><br>
+  <input class="newoption2_div1_1_text1" type="text" placeholder="PASSWORD" name=""><br>
+  <div id="naverlogin2"></div>
+  <div id="googlelogin2"></div>
+  <div id="facebooklogin2"></div>
+  <div id="kakaologin2" ></div>
+  <div id="check_id"><p><input type="checkbox" id="newoption2_div1_1_a"><label for="newoption2_div1_1_a">아이디 저장</label></p>
+  </div> 
+  
+  <button id="newoption2_div1_1_buttonlogin">로그인</button><br>
+  <button class="newoption2_div1_1_buttonserch1">아이디찾기</button>
+  <button class="newoption2_div1_1_buttonserch2">비밀번호 찾기</button>
+  <button class="newoption2_div1_1_buttonserch2">회원가입</button>
+</div></div>
+
+<div id="newoption2_div1_2">
+<div id="newoption2_div1_2_login">
+  <p>> 비회원의 경우,주문번호로 조회가 가능하며 보안상
+      &nbsp;&nbsp;&nbsp;해당 페이지에서 확인 가능 합니다. </p>
+  <p>> 주문자 정보를 잊어버리신 경우 고객센터로 문의 
+      &nbsp;&nbsp;&nbsp;해주세요.</p>
+  <p>> 아래의 링크로 이동해서 조회하시기 바랍니다.</p>
+  
+  <button id="newoption2_div1_2_login_buttonlogin">비회원 주문조회 바로가기</button><br>
+</div>
+</div>
+
+
+
+
+	</div>
+	<div class="newoption3" id="newoption3">
+	<span id="home_span3">장바구니</span>
+	<span id="home_span3_1" onclick="hide('newoption3')">&times;</span><hr>
+	<div id="newoption3_div" >
+	</div>
+	<button class="newoption_button">장바구니 전체보기</button>
+	</div>
+	<div class="newoption4" id="newoption4">
+	<span id="home_span4">관심상품</span>
+	<span id="home_span4_1" onclick="hide('newoption4')">&times;</span><hr>
+	<div id="newoption4_div">
+	</div>
+	<button class="newoption_button">관심상품 전체보기</button>
+	</div>
+	<div class="newoption5" id="newoption5">
+	<span id="home_span5">좋아요</span>
+	<span id="home_span5_1" onclick="hide('newoption5')">&times;</span><hr>
+	  <div id="newoption5_div1" onclick="showlogin2()">좋아요 상품</div>
+	  <div id="newoption5_div2" onclick="showorder2()">좋아요 카테고리</div>
+	  <div id="newoption5_div1_1" style="background-image: url('../JsProject/sidebarimage/newop5.jpg');">
+      </div>
+	  <div id="newoption5_div1_2" style="background-image: url('../JsProject/sidebarimage/newop5.jpg');">
+      </div>
+	<button class="newoption_button">좋아요 전체보기</button>
+	</div>
+	<div class="newoption6" id="newoption6">
+	<span id="home_span6">최근본상품</span>
+	<span id="home_span6_1" onclick="hide('newoption6')">&times;</span><hr>
+	<div id="newoption6_div">
+	</div>
+	<button class="newoption_button">최근 본 상품 전체보기</button>
+	</div>
+
+
+<div class="sidemenuname" id="sidemenuname">
+	<div id="sidemenuname1">검색</div>
+    <div id="sidemenuname2">주문＊배송조회</div>
+	<div id="sidemenuname3">장바구니</div>
+	<div id="sidemenuname4">관심상품</div>
+    <div id="sidemenuname5">좋아요</div>
+    <div id="sidemenuname6">최근본상품</div>
+    <div id="sidemenuname7"></div>
+	</div>
+	<div id="mainsidenav" class="mainsidediv">
+<div class="sidemainmenu">
+<div class="sidemenu">
+<table style="padding-top: 8px; margin-left: 3px;">
+<tr>
+<td>
+ <a href="#" onclick="openNav()"
+ onmouseup="change()" id="close" 
+ style="color: silver; font-size: 20px; font-family: cooper black; ">닫기</a>
+ </td>
+ </tr>
+ </table>
+</div>
+<div class="sidemenu1" id="sidemenu1" onmouseover="document.getElementById('sidemenuname1').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname1').style.visibility = 'hidden';"
+onclick="clickaction()">
+ <img alt="" src="../JsProject/sidebarimage/sidemenu1.jpg">
+</div>
+<div class="sidemenu2" id="sidemenu2" onmouseover="document.getElementById('sidemenuname2').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname2').style.visibility = 'hidden';"
+onclick="clickaction2()">
+<img alt="" src="../JsProject/sidebarimage/sidemenu2.jpg">
+</div>
+<div class="sidemenu3" id="sidemenu3" onmouseover="document.getElementById('sidemenuname3').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname3').style.visibility = 'hidden';"
+onclick="clickaction3()">
+<img alt="" src="../JsProject/sidebarimage/sidemenu3.jpg">
+</div>
+<div class="sidemenu4" id="sidemenu4" onmouseover="document.getElementById('sidemenuname4').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname4').style.visibility = 'hidden';"
+onclick="clickaction4()">
+<img alt="" src="../JsProject/sidebarimage/sidemenu4.jpg">
+</div>
+<div class="sidemenu5" id="sidemenu5" onmouseover="document.getElementById('sidemenuname5').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname5').style.visibility = 'hidden';"
+onclick="clickaction5()">
+<img alt="" src="../JsProject/sidebarimage/sidemenu5.jpg">
+</div>
+<div class="sidemenu6" id="sidemenu6" onmouseover="document.getElementById('sidemenuname6').style.visibility = 'visible';"
+onmouseout="document.getElementById('sidemenuname6').style.visibility = 'hidden';"
+onclick="clickaction6()">
+<img alt="" src="../JsProject/sidebarimage/sidemenu6.jpg">
+</div>
+<div class="sidemenu7" id="sidemenu7"></div>
+</div>
+
+<div id="subsidediv" class="subsidediv">
+<p class="side_p"><input type="text" name="serch" id="home_search">
+<button class="home_button">검색</button></p>
+<p class="side_p"><a href="http://localhost/web01/JsProject/Home.html" target="_parent" onmouseover="this.innerHTML='메인화면'" 
+onmouseout="this.innerHTML='MAIN'">MAIN</a></p>
+<p class="side_p"><a href="#" onclick="popup('popup_shortcuticon.html','popup_shortcuticon')" onmouseover="this.innerHTML='바로가기'" 
+onmouseout="this.innerHTML='SHORTCUT ICON'">SHORTCUT ICON</a></p>
+<p class="side_p"><a href="#" onclick="popup('popup_bookmarked.html','popup_bookmarked')" onmouseover="this.innerHTML='즐겨찾기'" 
+onmouseout="this.innerHTML='BOOK MARKED'">BOOK MARKED</a></p>
+<p class="side_p"><a target="iframe" href="notice.html" onmouseover="this.innerHTML='공지사항'" 
+onmouseout="this.innerHTML='NOTICE'">NOTICE</a></p>
+<p class="side_p"><a target="iframe" href="QnEvent.html" onmouseover="this.innerHTML='이벤트'" 
+onmouseout="this.innerHTML='EVENT'">EVENT</a></p>
+<p class="side_p"><a target="iframe" href="QnReview.html" onmouseover="this.innerHTML='포토리뷰'" 
+onmouseout="this.innerHTML='PHOTO REVEIW'">PHOTO REVEIW</a></p>
+<p class="side_p"><a target="iframe" href="Qn.html" onmouseover="this.innerHTML='상품문의'" 
+onmouseout="this.innerHTML='Q & N'">Q &#38; N</a></p>
+<p class="side_p"><a href="#" onmouseover="this.innerHTML='출석체크'" 
+onmouseout="this.innerHTML='ATTENDANCEC check'">ATTENDANCEC check</a></p><br>
+
+<p class="side_img"><a href="https://partner.talk.naver.com/" target="_blank">
+<img alt="" src="../JsProject/sidebarimage/navertok.jpg"></a></p>
+<p class="side_img"><a href="https://www.instagram.com/" target="_blank">
+<img alt="" src="../JsProject/sidebarimage/instagram.jpg"></a></p>
+<p class="side_img"><a href="https://www.kakaocorp.com/service/KakaoTalk" target="_blank">
+<img alt="" src="../JsProject/sidebarimage/kakao.jpg"></a></p>
+<p class="side_img"><a href="https://www.facebook.com/" target="_blank">
+<img alt="" src="../JsProject/sidebarimage/facebook.jpg"></a></p>
+<div class="subsidediv2">
+<p class="side_ment">CALL CENTER</p> <br>
+<p class="side_ment1">010-1234-1234</p><br><br>
+
+<p class="side_ment" >
+MON-FRI AM 11:00 ~ PM 4:00
+LUNCH PM 1:00 ~ PM 2:00
+SAT.SUN.HOLIDAY OFF
+<br><br>
+BANK INFO<br>
+국민은행 : 020134-01-123412<br>
+예금주 : 홍길동 (STORE)
+</p>
+</div>
+</div>
+</div>
+
+
+<h1 id="home_h1"><a href="Home.html">S T O R E</a></h1>
+
+
+   <header></header>    
+   <section>
+    <div class="home_topmenu">
+    <div class="home_menudiv">
+     <ul class="home_main">
+      <li><h1 class="h1_1"><a href="#">BEST</a></h1>
+        <ul class="home_sub">
+          <li><a href="BestJunior.html">JONIOR BEST</a></li>
+          <li><a href="BestBaby.html">BABY BEST</a></li>
+          <li><a href="BestAcc.html">ACC BEST</a></li>
+        </ul>
+      </li>
+      </ul>
+      </div> 
+      <div class="home_menudiv">
+      <ul class="home_main">
+       <li><h1 class="h1_1"><a href="#">SALE</a></h1>
+        <ul class="home_sub">
+          <li><a href="SaleSpring.html">SPRING</a></li>
+          <li><a href="SaleSummer.html">SUMMER</a></li>
+          <li><a href="SaleFall.html">FALL</a></li>
+          <li><a href="SaleWinter.html">WINTER</a></li>
+
+        </ul>
+      </li>
+      </ul>
+      </div>
+      <div class="home_menudiv">
+      <ul class="home_main">    
+      <li><h1 class="h1_1"><a href="#">BABY</a></h1>
+        <ul class="home_sub">
+          <li><a href="BabyOuter.html">OUTER</a></li>
+          <li><a href="BabyTop.html">TOP</a></li>
+          <li><a href="BabyBottom.html">BOTTOM</a></li>
+          <li><a href="BabySet.html">SET</a></li>
+          <li><a href="BabyDress.html">DRESS</a></li>
+        </ul>
+      </li>
+      </ul>
+      </div>
+      <div class="home_menudiv">
+      <ul class="home_main">
+   <li><h1 class="h1_1"><a href="#">JUNIOR</a></h1>
+        <ul class="home_sub">
+          <li><a href="JuniorOuter.html">OUTER</a></li>
+          <li><a href="JuniorTop.html">TOP</a></li>
+          <li><a href="JuniorBottom.html">BOTTOM</a></li>
+          <li><a href="JuniorSet.html">SET</a></li>
+          <li><a href="JuniorDress.html">DRESS</a></li>
+        </ul>
+      </li>
+      </ul>
+      </div>
+      <div class="home_menudiv">
+      <ul class="home_main">
+      <li><h1 class="h1_1"><a href="#">ACC</a></h1>
+        <ul class="home_sub">
+          <li><a href="AccBag.html">BAG</a></li>
+          <li><a href="AccCap.html">CAP</a></li>
+          <li><a href="AccSocks.html">SOCKS</a></li>
+          <li><a href="AccMuffler.html">MUFFLER</a></li>
+        </ul>
+      </li>
+      </ul>
+      </div>
+      <div class="home_menudiv" id="menudivQA">
+      <ul class="home_main">
+      <li><h1 class="h1_1"><a href="#">Q&#38;A</a></h1>
+        <ul class="home_sub">
+          <li><a href="notice.html">NOTICE</a></li>
+          <li><a href="Qn.html">FREE BOARD</a></li>
+          <li><a href="QnReview.html">REVIEW</a></li>
+          <li><a href="QnEvent.html">EVENT</a></li>
+        </ul>
+      </li>         
+     </ul>
+    </div>
+   </div>
+</section>
+
+<div id="content_maindiv">
+<div class="maindiv">
+<div class="subdiv">
+<p class="num">no.1</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler.jpg"></a>
+<br>
+<p class="modelname">H오브리스노우네키목도리</p>
+<hr>
+<p class="price">9,350원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.2</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler1.jpg"></a>
+<br>
+<p class="modelname">H아론스노우네키목도리</p>
+<hr>
+<p class="price">8,500원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.3</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler2.jpg"></a>
+<br>
+<p class="modelname">H세비노워머</p>
+<hr>
+<p class="price">12,750원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.4</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler3.jpg"></a>
+<br>
+<p class="modelname">양털다이마루네키</p>
+<hr>
+<p class="price">9,600원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.5</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler4.jpg"></a>
+<br>
+<p class="modelname">니트쁘띠방울</p>
+<hr>
+<p class="price">9,600원</p>
+</div>
+</div>
+<div class="maindiv">
+<div class="subdiv">
+<p class="num">no.6</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler5.jpg"></a>
+<br>
+<p class="modelname">니트방울네키	</p>
+<hr>
+<p class="price">11,200원</p>
+</div>
+<div class="subdiv">
+<p class="num">no.7</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler6.jpg"></a>
+<br>
+<p class="modelname">포근해넥워머</p>
+<hr>
+<p class="price">9,600원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.8</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler7.jpg"></a>
+<br>
+<p class="modelname">스노우머플러</p>
+<hr>
+<p class="price">17,000원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.9</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler8.jpg"></a>
+<br>
+<p class="modelname">비바머플러</p>
+<hr>
+<p class="price">25,600원</p>
+</div>
+
+<div class="subdiv">
+<p class="num">no.10</p>
+<hr>
+<a href="#"><img class="img" alt="제품1" src="../ModelImage/AccMuffler/muffler9.jpg"></a>
+<br>
+<p class="modelname">양털포근이네키</p>
+<hr>
+<p class="price">12,800원</p>
+</div>
+</div>
+
+
+<div id="content_maindiv_div2">
+<table class="subtable">
+   <tr>
+   <td class="subtd"><a href="#">〈〈</a></td>
+   <td class="subtd"><a href="#">〈</a></td>
+   <td class="subtd"><a href="#">1</a></td>
+   <td class="subtd"><a href="#">2</a></td>
+   <td class="subtd"><a href="#">3</a></td>
+   <td class="subtd"><a href="#">4</a></td>
+   <td class="subtd"><a href="#">5</a></td>
+   <td class="subtd"><a href="#">〉</a></td>  
+   <td class="subtd"><a href="#">〉〉</a></td> 
+   </tr>
+</table>
+</div>
+</div>
+
+<div class="home_lastdiv">
+<a href="#" class="home_aa">회사소개</a>
+<a href="agreement.html" class="aa">이용약관</a>
+<a href="privacy_policy.html" class="aa">개인정보취급방침</a>
+<a href="guide.html" class="aa">이용안내</a>
+<a href="mailto:Hongkildong@naver.com" class="aa">제휴문의</a>
+</div>
+
+<div class="lastmaindiv">
+<div class="lastsubdiv">
+<span class="lastspan"> CUSTOMER CENTER</span>
+<p style="font-size: 50px;">☎ 010-1234-1234</p>
+<p>Mon-Friday am 11:00 ~ pm 4:00<br>
+Lunch Time pm 1:00 ~ pm 2:00<br>
+Sat.Sun Holiday OFF</p>
+</div>
+<div class="lastsubdiv1">
+<span class="lastspan">ACCOUNT INFO</span><br><br>
+<p>국민은행 020134-01-123412<br>
+name 홍길동(STORE)<br><br>
+<select onchange="if(this.value) window.open(this.value);">
+<option>인터넷뱅킹바로가기</option>
+<option value="https://www.kbstar.com/">국민은행</option>
+<option value="https://www.shinhan.com/index.jsp">신한은행</option>
+<option value="https://www.kebhana.com/">하나은행</option>
+<option value="https://www.wooribank.com/">우리은행</option>
+<option value="https://www.ibk.co.kr/">기업은행</option>
+</select>
+</div>
+<div class="lastsubdiv1">
+<span class="lastspan">FAVORITE MENU</span><br><br>
+<a target="iframe" href="HomeLogin.html" >로그인</a> / 
+<a href="MemberAgree.html">회원가입</a><br>
+<a href="#">관심상품</a><br>
+<a href="#">장바구니</a><br>
+<a href="#">주문조회</a><br>
+<a href="#">마이페이지</a>
+</div>
+<div class="lastsubdiv">
+<span class="lastspan">RETURN / EXCHANGE</span><br><br>
+<p>서울특별시 강동구 천호대로 102(천호동) <br>2층 STORE
+자세한 교환●반품절차 안내는 <br>문의란 및 공지사항을 참고해주세요.
+</div>
+</div>
+<footer>
+<div>
+ <p> COMPANY : STORE OWNER : 홍길동 BUSINESS LICENSE : 123-12-12345 
+ <button style="width: 100px; height: 25px; background-color: silver; border: 0px; 
+ border-radius: 10px; color: white;
+ ">사업자정보확인</button>
+  MALL-ORDER LICENSE : 제 2019-서울강동-0123호<br>
+  ADDRESS : 01234 서울특별시 강동구 천호대로 102(천호동)2층 STORE ☎ : 010-1234-1234 <br>
+  SPO : 홍길동 (Hongkildong@naver.com) CONTACT US : Hongkildong@naver.com<br><br>
+  COPYRIGHT ⓒSTORE ALL RIGHTS RESERVED. HOSTING by CAFE24 | DESIGNED by DFLOOR</p>
+  </div>
+  <div>
+  </div>
+  </footer>
+</body>
+</html>

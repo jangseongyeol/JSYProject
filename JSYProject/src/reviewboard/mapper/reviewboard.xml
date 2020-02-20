@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewboard">
+  <select id="reviewList" resultType="reviewboard.dto.ReviewBoardDTO">
+       select * from(
+         select A.*, rownum as rn
+         from (
+           select num,userid,subject,reg_date,readcount
+           ,filename,filesize,down,re_level
+           ,(select count(*) from reviewboard_comment
+           where board_num=num) comment_count,show
+           from reviewboard
+           order by ref desc, re_step
+         ) A   
+       )
+       where rn between #{start} and #{end} 
+  </select>
+  <insert id="reviewInsert">
+    insert into reviewboard
+    (num,userid,subject,passwd,ref,re_step,re_level,contents,ip,filename,filesize)
+    values
+( (select nvl(max(num)+1,1) from reviewboard)
+ ,#{userid},#{subject},#{passwd}
+ ,(select nvl(max(num)+1,1) from reviewboard)
+ ,1,0,#{contents},#{ip},#{filename},#{filesize} )
+  </insert>
+  
+  <select id="reviewGetFileName" resultType="String">
+    select filename 
+    from reviewboard 
+    where num=#{num}
+  </select>
+  
+  <update id="reviewPlusDown">
+    update reviewboard set down=down+1 where num=#{num}
+  </update>
+
+  <select id="reviewViewReplace" resultType="reviewboard.dto.ReviewBoardDTO">
+    select * from reviewboard
+    where num=#{num}
+  </select>
+  
+  <update id="reviewPlusReadCount">
+   update reviewboard set readcount=readcount+1 where num=#{num}
+  </update>
+  
+  <select id="reviewCommentList" resultType="reviewboard.dto.ReviewBoardCommentDTO">
+     select * from reviewboard_comment
+     where board_num=#{num}
+  </select>
+  
+  <insert id="reviewCommentAdd">
+    insert into reviewboard_comment
+    (comment_num,board_num,userid,contents) values
+    ((select nvl(max(comment_num)+1,1) from reviewboard_comment)
+     , #{board_num}, #{userid}, #{contents})
+  </insert>
+  
+  <update id="reviewUpdateStep">
+    update reviewboard
+    set re_step=re_step+1
+    where ref=#{ref} and re_step >= #{re_step}
+  </update>
+  
+  <insert id="reviewReply">
+    insert into reviewboard
+    (num,userid,subject,passwd,ref,re_step,re_level,contents,ip,filename,filesize)
+    values
+   ( (select nvl(max(num)+1,1) from reviewboard)
+    ,#{userid},#{subject},#{passwd}
+    ,#{ref},#{re_step},#{re_level}
+    ,#{contents},#{ip},#{filename},#{filesize} )
+  </insert>
+  <select id="reviewPasswdCheck" resultType="String">
+    select passwd from reviewboard
+    where num=#{num} and passwd=#{passwd}
+  </select>
+  
+  <update id="reviewUpdate">
+     update reviewboard
+     set userid=#{userid}, subject=#{subject}
+     , contents=#{contents}, filename=#{filename}
+     , filesize=#{filesize}, down=#{down}
+     where num=#{num}
+  </update>
+
+   <update id="reviewDelete">
+    update reviewboard set show='n' 
+    where num=#{num}
+   </update>
+   
+   <select id="reviewSearchList" resultType="reviewboard.dto.ReviewBoardDTO">
+   <include refid="pagingHeader"></include>
+    select num,userid,subject,reg_date,readcount
+     ,filename,filesize,down,re_level
+     ,(select count(*) from reviewboard_comment
+     where board_num=num) comment_count,show
+     from reviewboard
+   <include refid="search"></include> 
+           order by ref desc, re_step
+   <include refid="pagingFooter"></include>
+    </select>
+  <sql id="search">
+     <choose>
+       <when test="search_option != 'all'">
+         where ${search_option} like #{keyword} and show='y'      
+       </when>
+       <otherwise>
+         where ( userid like #{keyword}
+         or subject like #{keyword} 
+         or contents like #{keyword} ) and show='y'
+       </otherwise>
+     </choose>   
+  </sql>     
+   <sql id="pagingHeader">
+     select * from(
+         select A.*, rownum as rn
+         from (
+   </sql>
+   <sql id="pagingFooter">
+       ) A   
+    ) where rn between #{start} and #{end}      
+   </sql>
+   
+   <select id="reviewCount" resultType="int">
+     select count(*) from reviewboard
+   </select>
+   
+   <select id="reviewCountSearch" resultType="int">
+         select count(*) from reviewboard
+     <choose>
+       <when test="search_option != 'all'">
+         where ${search_option} like #{keyword} and show='y'
+       </when>
+       <otherwise>
+         where ( userid like #{keyword}
+         or subject like #{keyword} 
+         or contents like #{keyword} ) and show='y'
+       </otherwise>
+     </choose>  
+       order by ref desc, re_step
+   </select>
+   
+   </mapper>

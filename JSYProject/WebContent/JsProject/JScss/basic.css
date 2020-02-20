@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+#basic_maindiv {margin-top: 100px; display: inline-block; position: relative; }
+#basic_main{width: 600px; height: 426px;}
+#basic_main1 {width: 440px; height: 426px;}
+#basic_main2{width: 440px; height: 426px;}
+#basic_main3{width: 600px; height: 426px;}
+#basic_subimgdiv {display: inline-block; width: 880px; height: 426px; }
+.basic_imgdiv {display: inline-block;}
+.basic_maindiv {width: 1500px; height: 500px; position: relative; }
+.basic_subdiv {width: 270px; height: 400px; text-align: left; margin: 2% 1%;
+ float: left; }
+.basic_img {width: 270px; height: 300px;}
+.basic_basic_num {text-align: center; font-weight: bold; font-family: cooper black}
+span.basic_modelname {font-weight: bold;}
+span.basic_price {font-family: cooper black; }
+#basic_div2 {width: 1000px; height: auto; margin: auto; }
+.basic_subtable {text-align: center; margin: auto; padding-top: 70px;}
+.basic_subtable td {border: 1px solid silver; width: 40px; height: 40px; margin: 0px -2px; font-weight: bold;}
+hr {margin: 10px 0px;}
+h2{margin: 30px 0px;}

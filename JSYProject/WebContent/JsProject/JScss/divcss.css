@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#content_maindiv {border-bottom:1px solid silver; width: 1512px; height:auto; margin-top: 100px;}
+#content_maindiv .maindiv {width: 1500px; height: 500px; position: relative; }
+#content_maindiv .subdiv {width: 270px; height: 400px; text-align: left; margin: 2% 1%;
+ float: left; }
+#content_maindiv .img {width: 270px; height: 300px;}
+#content_maindiv .num {text-align: center; font-weight: bold; font-family: cooper black}
+#content_maindiv span.modelname {font-weight: bold;}
+#content_maindiv span.price {font-family: cooper black; }
+#content_maindiv_div2 {width:1500px; height: auto; margin-bottom: 60px; }
+#content_maindiv_div2 .subtable {text-align: center; margin: auto; padding-top: 70px;}
+#content_maindiv_div2 .subtable td {border: 1px solid silver; width: 40px; height: 40px; margin: 0px -2px; font-weight: bold;}

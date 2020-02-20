@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MEMBER</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+function check() {
+	//아이디 체크
+	var userid =document.getElementById("userid");
+	if(userid.value=="") {
+		alert("아이디는 필수 입력입니다.");
+		userid.focus();
+		return;
+	}
+	//^시작, $끝, {4,10}글자수 지정
+	var exp1=/^[A-Za-z0-9]{4,10}$/;//정규표현식
+	//정규표현식.test(검사할 문자열) - 규칙에 맞으면 true, 틀리면 false
+	if(!exp1.test(userid.value)) {
+		alert("아이디는 영문자,숫자 4~10자리로 입력하세요.");
+		userid.focus();
+		return;
+	}
+	//비밀번호 체크
+	var password =document.getElementById("password");
+	var passwordcheck=document.getElementById("passwordcheck");
+	var exppwd=/^(?=.*[a-zA-Z]{1,16})(?=.*[!@#$%^*+=-]{1,16})(?=.*[0-9]{1,16}).{8,16}$/;
+	if(!exppwd.test(password.value)){
+		alert('숫자, 영문자, 특수문자 조합으로 8~16자리를 사용해야 합니다.');
+		password.focus();
+		return;
+	}
+	if(password.value != userid)
+	  if(password.value != passwordcheck.value) {
+          alert("비밀번호가 일치하지 않습니다. 다시 확인해 주세요.");
+          passwordcheck.value = "";
+          passwordcheck.focus();
+          return;
+      }
+	//이름 체크
+	var name = document.getElementById("name");
+	
+	//\x20: 16진수 20=> 10진수 32, (스페이스 1개인 공객문자를 의미) 
+	var exp2= /^[가-힣ㄱ-ㅎㅏ-ㅣ\x20]{2,10}$/;
+	if(!exp2.test(name.value)){
+		alert("이름은 한글 3~10자 이내로 입력하세요.");
+		name.focus();
+		return;
+	}
+	
+	//이메일 체크
+	var email=document.getElementById("email");
+	
+	var exp3= /^[a-z0-9]{2,}@[a-z0-9]{2,}\.[a-z]{2,}$/;
+	if(!exp3.test(email.value)) {
+		alert("이메일 형식이 잘못 되었습니다. ex) abc@abc.com");
+		email.focus();
+		return;
+	}
+	//전화번호 체크
+	var phone1 = document.getElementById("phone1");
+	var exp=/^[0-9]+$/;
+	console.log("match: "+phone1.value.match(exp));
+	console.log("test"+exp.test(phone1.value));
+	if(!phone1.value.match(exp)) {
+		alert("핸드폰번호는 숫자만 입력하세요.");
+		phone.focus();
+		return;
+	}
+	var phone2 = document.getElementById("phone2");
+	var exp=/^[0-9]+$/;
+	console.log("match: "+phone2.value.match(exp));
+	console.log("test"+exp.test(phone2.value));
+	if(!phone2.value.match(exp)) {
+		alert("핸드폰번호는 숫자만 입력하세요.");
+		phone.focus();
+		return;
+	}
+	alert("정상적으로 입력되었습니다.");
+}
+
+$(function(){
+	//input태그에 포커스를 얻을때 (focus)
+	$(".textfocus").focus(function(){
+		$(this).css("border","3px solid silver");
+		$(this).css("background-color","#333");
+		$(this).css("color","white");
+	});
+	//input태그에 포커스를 잃을때(blur)
+	$(".textfocus").blur(function(){
+		$(this).css("border","1px solid black");
+		$(this).css("background-color","white");
+		$(this).css("color","black");
+	});
+	$(".text2").focus(function(){
+		$(this).css("border","3px solid silver");
+		$(this).css("background-color","#333");
+		$(this).css("color","white");
+	});
+	//input태그에 포커스를 잃을때(blur)
+	$(".text2").blur(function(){
+		$(this).css("border","1px solid black");
+		$(this).css("background-color","white");
+		$(this).css("color","black");
+	});
+});
+</script>
+<style type="text/css">
+*{margin: 2px; padding: 5px 0px;}
+input[type=submit] {width:300px; height: 48px;}
+body {width: 1800px; height: 1200px; margin:auto; background-image: url("../JsProject/Image/member.jpg");
+background-repeat: no-repeat; background-position: center;}
+form {width: 310px; margin: auto;} 
+span{font-size: 15px;}
+input[type=text] { width: 300px; height: 35px;}
+input[type=password] { width: 300px; height: 35px;}
+input[type=email] {width: 300px; height: 35px;}
+input[type=tel] {width: 300px; height: 35px;}
+input.button1 {width: 303px; height: 48px;}
+.select2 {height: 48px; width: 97px;}
+input[type=text].text1 {width: 90px;}
+input[type=text].text2 {width: 90px;}
+.select1 {width: 303px; height: 48px;}
+input[type=text].select2 {width: 60px;}
+fieldset {width: 400px; margin: auto; padding: 30px; border: white; font-family: "cooper black";}
+h1 {font-size: 70px; text-align: center; font-family: "cooper black";}
+a {color: black;}
+input:focus {outline:none;}
+</style>
+</head>
+<body>
+
+<h1>S T O R E</h1>
+<fieldset>
+<form action="MyMember_result.jsp" method="post">
+ <span><b>아이디</b></span><br>
+ <input id="userid" class="textfocus" type="text" name="userid" placeholder="아이디를 입력하세요." maxlength="15"><br><br>
+ <span><b>비밀번호</b></span><br>
+ <input id="password" class="textfocus" type="password" name="password" placeholder="비밀번호는 8자이상." maxlength="15"><br><br>
+ <span><b>비밀번호 재확인</b></span><br>
+ <input id="passwordcheck" class="textfocus" type="password" name="passwordck" placeholder="비밀번호 확인해주세요." maxlength="15"><br><br>
+<span><b>이름</b></span><br>
+ <input id="name" type="text" class="textfocus" name="name" placeholder="이름을 입력하세요."><br><br>
+<span><b>생년월일</b></span><br>
+ <input type="text" name="birthyear" class="text1" maxlength="4">
+<select class="select2"><option>월</option>
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+ <input type="text" name="birthday" class="text1" maxlength="2"><br><br>
+<span><b>성별</b></span><br>
+<select class="select1" name="sex"><option>성별</option><option value="남">남</option> <option value="여">여</option>
+</select><br><br>
+<span><b>이메일</b></span><br>
+ <input id="email"  class="textfocus" type="email" name="email" placeholder="ex)jang@naver.com"><br><br>
+<span><b>휴대전화</b></span><br>
+<select class="select2" name="hpF"><option>선택</option>
+<option value="010">010</option> <option value="011">011</option>
+<option value="016">016</option> <option value="017">017</option>
+<option value="019">019</option>
+</select>
+<input id="phone1" type="text" name="hpM" placeholder="1234" class="text2" maxlength="4">
+<input id="phone2" type="text" name="hpL" placeholder="1234" class="text2" maxlength="4">
+<input type="button" value="인증번호 받기 " class="button1"><br><br>
+<input type="tel"  name="iauthNo" placeholder="인증번호 입력하세요"
+  aria-describedby="iwa_verify" disabled maxlength="4"><br><br>
+  <input type="button" value="가입하기" class="button1" onclick="check()">
+<!--  <input type="image" src="../JsProject/sign.jpg"> -->
+
+ </form>
+ </fieldset>
+
+</body>
+</html>

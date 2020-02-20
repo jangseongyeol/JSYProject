@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="storeproduct">
+ <insert id="produck_insert">
+insert into storeproduct
+(productid,mainmenu,submenu,productname,price,ref,re_step,re_level,productcontent,ip
+,product_color1,product_color2,product_color3,product_color4,product_color5,product_color6,modelsize1,modelsize2
+,modelsize3,modelsize4,modelsize5,modelsize6,filename0,filename1,filename2,filename3,filename4
+,filename5,filename6,filename7,filename8) values
+ ((select nvl(max(productid)+1,1) from storeproduct)
+ ,#{mainmenu},#{submenu},#{productname},#{price},(select nvl(max(productid)+1,1) from storeproduct)
+ ,1,0,#{productcontent},#{ip}
+ ,#{product_color1},#{product_color2},#{product_color3},#{product_color4}
+ ,#{product_color5},#{product_color6},#{modelsize1},#{modelsize2},#{modelsize3},#{modelsize4}
+ ,#{modelsize5},#{modelsize6},#{filename0},#{filename1},#{filename2},#{filename3}
+ ,#{filename4},#{filename5},#{filename6},#{filename7},#{filename8})
+ </insert>
+ 
+ <select id="product_count" resultType="int">
+     select count(*) from storeproduct
+ </select>
+ <select id="countMenu" resultType="int">
+  select count(*) from storeproduct where submenu=#{submenu}
+ </select>
+ 
+ <select id="indexList" resultType="storeproduct.dto.StoreProductDTO">
+   select * from storeproduct
+ </select>
+ <select id="poduct_list" resultType="storeproduct.dto.StoreProductDTO">
+   select * from(
+         select A.*, rownum as rn
+         from (
+           select productid,mainmenu,submenu,productname,price,reg_date,readcount
+           ,re_level,filename0,filename1,filename2,filename3,filename4,filename5
+           ,filename6,filename7,filename8,product_color1,product_color2,product_color3,product_color4
+           ,product_color5,product_color6,modelsize1,modelsize2,modelsize3,modelsize4,modelsize5,modelsize6
+           ,productcontent
+           from storeproduct
+           order by ref desc, re_step
+         ) A   
+       )
+       where rn between #{start} and #{end} 
+ </select>
+ 
+ 
+  <update id="product_plusReadCount">
+   update storeproduct set readcount=readcount+1 where productid=#{productid}
+  </update>
+ <select id="product_view" resultType="storeproduct.dto.StoreProductDTO">
+     select * from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+  <select id="getFileName0" resultType="String">
+    select filename0 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName1" resultType="String">
+    select filename1 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName2" resultType="String">
+    select filename2 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName3" resultType="String">
+    select filename3 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName4" resultType="String">
+    select filename4 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName5" resultType="String">
+    select filename5 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName6" resultType="String">
+    select filename6 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <select id="getFileName7" resultType="String">
+    select filename7 from storeproduct
+    where productid=#{productid}
+ </select>
+ <select id="getFileName8" resultType="String"> 
+    select filename8 from storeproduct
+    where productid=#{productid}
+ </select>
+ 
+ <update id="productupdate">
+ update storeproduct set
+ mainmenu=#{mainmenu}, submenu=#{submenu}, productname=#{productname}, price=#{price}
+ ,productcontent=#{productcontent}, product_color1=#{product_color1}, product_color2=#{product_color2}
+ ,product_color3=#{product_color3}, product_color4=#{product_color4}, product_color5=#{product_color5}
+ ,product_color6=#{product_color6}, modelsize1=#{modelsize1}, modelsize2=#{modelsize2}, modelsize3=#{modelsize3}
+ ,modelsize4=#{modelsize4}, modelsize5=#{modelsize5}, modelsize6=#{modelsize6}
+ ,filename0=#{filename0}, filename1=#{filename1}, filename2=#{filename2}, filename3=#{filename3}
+ ,filename4=#{filename4}, filename5=#{filename5}, filename6=#{filename6}, filename7=#{filename7}
+ ,filename8=#{filename8}
+ where productid=#{productid}
+ </update>
+ 
+ <delete id="productdelete">
+   delete from storeproduct   
+   where productid=#{productid} 
+ </delete>
+ 
+ <select id="subMenuList" resultType="storeproduct.dto.StoreProductDTO">
+   <include refid="pagingHeader"></include>
+           select productid,mainmenu,submenu,productname,price,reg_date,readcount
+           ,re_level,filename0,filename1,filename2,filename3,filename4,filename5
+           ,filename6,filename7,filename8,product_color1,product_color2,product_color3,product_color4
+           ,product_color5,product_color6,modelsize1,modelsize2,modelsize3,modelsize4,modelsize5,modelsize6
+           ,productcontent
+           from storeproduct
+      <include refid="search"></include> 
+       order by ref desc, re_step
+       <include refid="pagingFooter"></include>
+ </select>
+ <sql id="search">
+         where submenu=#{submenu}       
+  </sql>     
+   <sql id="pagingHeader">
+     select * from(
+         select A.*, rownum as rn
+         from (
+   </sql>
+   <sql id="pagingFooter">
+       ) A   
+    ) where rn between #{start} and #{end}      
+   </sql>
+   
+   <select id="countProductSearch" resultType="int">
+      select count(*) from storeproduct
+      where ${search_option} like #{keyword}
+   </select>
+    
+   <select id="searchProductList" resultType="storeproduct.dto.StoreProductDTO">
+       <include refid="productHeader"></include>
+           select productid,mainmenu,submenu,productname,price,reg_date,readcount
+           ,re_level,filename0,filename1,filename2,filename3,filename4,filename5
+           ,filename6,filename7,filename8,product_color1,product_color2,product_color3,product_color4
+           ,product_color5,product_color6,modelsize1,modelsize2,modelsize3,modelsize4,modelsize5,modelsize6
+           ,productcontent
+           from storeproduct
+      <include refid="productSearch"></include> 
+       order by ref desc, re_step
+       <include refid="productFooter"></include>
+ </select>
+ <sql id="productSearch">
+         where ${search_option} like #{keyword}       
+  </sql>     
+   <sql id="productHeader">
+     select * from(
+         select A.*, rownum as rn
+         from (
+   </sql>
+   <sql id="productFooter">
+       ) A   
+    ) where rn between #{start} and #{end}      
+   </sql>
+</mapper>

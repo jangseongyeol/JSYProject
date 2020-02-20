@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="store">
+  <insert id="insert_storemember">
+    insert into storemember 
+   (usernum, userid, passwd, username, 
+   useremail, phone, birthday, postcode, address, address2)
+   values ((select nvl(max(usernum)+1,1) from storemember),
+    #{userid}, #{passwd}, #{username}, 
+    #{useremail}, #{phone}, #{birthday}, #{postcode}, #{address}, #{address2}) 
+  </insert>
+  <select id="passwdcheck" resultType="store.dto.StoreMemberDTO">
+    select * from storemember where userid=#{userid}
+  </select>
+  <select id="loginstore" resultType="String">
+    select passwd from storemember where userid=#{userid}
+  </select>
+  
+  <select id="memberCount" resultType="int">
+    select count(*) from storemember
+  </select>
+  
+  
+  <select id="memberList" resultType="store.dto.StoreMemberDTO">
+    select * from(
+         select A.*, rownum as rn
+         from (
+          select usernum, userid, passwd, username, 
+           useremail, phone, birthday, postcode, address, address2, join_date 
+           from storemember ) A   
+       )
+       where rn between #{start} and #{end} 
+  </select>
+   
+  <select id="memberView" resultType="store.dto.StoreMemberDTO">
+     select * from storemember
+     where usernum=#{usernum}
+  </select>
+  
+  <select id="countMemberSearch" resultType="int">
+     select count(*) from storemember
+         where ${search_option} like #{keyword}
+  </select>
+  
+  <select id="memberSearchList" resultType="store.dto.StoreMemberDTO">
+  <include refid="memberHeader"></include>
+          select usernum, userid, passwd, username, 
+           useremail, phone, birthday, postcode, address, address2, join_date 
+           from storemember
+   <include refid="membersearch"></include>
+   order by usernum 
+   <include refid="memberFooter"></include>
+    </select>
+  <sql id="membersearch">
+         where ${search_option} like #{keyword}   
+  </sql>     
+   <sql id="memberHeader">
+     select * from(
+         select A.*, rownum as rn
+         from (
+   </sql>
+   <sql id="memberFooter">
+       ) A   
+    ) where rn between #{start} and #{end}      
+   </sql>
+
+  <select id="storememberDetail" resultType="store.dto.StoreMemberDTO">
+    select * from storemember where userid=#{userid}
+  </select>
+  
+  <delete id="memberDelete">
+   delete from storemember where usernum=#{usernum}
+  </delete>
+  
+  <update id="memberUpdate">
+   update storemember set
+    userid=#{userid}, username=#{username} 
+   ,useremail=#{useremail}, phone=#{phone}, birthday=#{birthday}
+   ,postcode=#{postcode}, address=#{address}, address2=#{address2}
+   where usernum=#{usernum}
+  </update>
+</mapper>
